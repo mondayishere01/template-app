@@ -1,18 +1,25 @@
-.row{
+.row {
   height: 100%;
 
-  .logo{
+  .logo {
     margin-top: 50px;
-    margin-bottom: -275px;
   }
 
-  form{
-    margin: auto;
+  form {
+    margin: 150px 0px auto 0;
     width: 100%;
-    padding: 15px;
+    padding: 35px 25px;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 20px 10px #0000000f;
+
+    button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+  .note {
+    padding: 15px;
   }
 }
-

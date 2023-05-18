@@ -1,23 +1,38 @@
 <div class="main-container">
   <div class="row g-0">
-    <div class="col-lg-4 col-md-4 col-sm-4 mx-auto d-flex flex-column align-items-center">
-      <img src="assets/images/logo.svg" class="logo" alt="Logo_image" height="200">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="text" class="form-control" formControlName="ID" placeholder="Enter Username">
+    <div
+      class="col-lg-6 col-md-6 col-sm-6 mx-auto d-flex flex-column align-items-center"
+    >
+      <img
+        src="assets/images/logo.svg"
+        class="logo"
+        alt="Logo_image"
+        height="200"
+      />
+      <form [formGroup]="loginform" (submit)="login(this.loginform.value)">
+        <div class="mb-3 d-flex flex-column">
+          <mat-label>Username</mat-label>
+          <mat-form-field floatLabel="never">
+            <input
+              type="text"
+              matInput
+              formControlName="username"
+              #username
+              (input)="checkMobile($event.target.value)"
+            />
+            <mat-error>Invalid username.</mat-error>
+          </mat-form-field>
+          <mat-label>Password</mat-label>
+          <mat-form-field floatLabel="never">
+            <input type="text" matInput formControlName="password" #password />
+          </mat-form-field>
         </div>
-        <!-- <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
+      <div class="note">
+        <a (click)="open()">Create not account</a>
+      </div>
     </div>
   </div>
 </div>

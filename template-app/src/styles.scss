@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
@@ -19,7 +18,7 @@ $md-peargreen: (
   300: #81c784,
   400: #66bb6a,
   500: #4caf50,
-  600: #98AD3C,
+  600: #98ad3c,
   700: #388e3c,
   800: #2e7d32,
   900: #1b5e20,
@@ -27,7 +26,8 @@ $md-peargreen: (
   A200: #69f0ae,
   A400: #00e676,
   A700: #00c853,
-  contrast: (50: $dark-primary-text,
+  contrast: (
+    50: $dark-primary-text,
     100: $dark-primary-text,
     200: $dark-primary-text,
     300: $dark-primary-text,
@@ -41,7 +41,7 @@ $md-peargreen: (
     A200: $dark-primary-text,
     A400: $dark-primary-text,
     A700: $dark-primary-text,
-  )
+  ),
 );
 $pear-web-app-primary: mat-palette($md-peargreen, 600);
 $pear-web-app-accent: mat-palette($mat-pink, A200, A100, A400);
@@ -50,9 +50,11 @@ $pear-web-app-accent: mat-palette($mat-pink, A200, A100, A400);
 $pear-web-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$pear-web-app-theme: mat-light-theme($pear-web-app-primary,
-    $pear-web-app-accent,
-    $pear-web-app-warn);
+$pear-web-app-theme: mat-light-theme(
+  $pear-web-app-primary,
+  $pear-web-app-accent,
+  $pear-web-app-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -73,11 +75,11 @@ body {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
-  // font-family: 'Roboto', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
 // @font-face {
@@ -86,17 +88,17 @@ body {
 // }
 
 // @font-face {
-//   font-family: "Roboto-Bold";
-//   src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype")
+//   font-family: "Montserrat-Bold";
+//   src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype")
 // }
 
 // @font-face {
-//   font-family: "Roboto-Medium";
-//   src: url("/assets/fonts/Roboto-Medium.ttf") format("truetype")
+//   font-family: "Montserrat-Medium";
+//   src: url("/assets/fonts/Montserrat-Medium.ttf") format("truetype")
 // }
 
 @font-face {
-  font-family: "Roboto-Regular";
+  font-family: "Montserrat-Regular";
   src: url("/src/assets/fonts/Montserrat-Black.ttf") format("truetype");
 }
 
@@ -109,9 +111,44 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 
-  .main-container{
+  .main-container {
     height: 100vh;
     background-color: #f5f5f5;
+  }
+}
+
+mat-label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+mat-form-field {
+  padding-bottom: 5px;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0px;
+  }
+
+  .mat-form-field-infix {
+    padding: 0px !important;
+    margin: 0px !important;
+    border-top: 5px solid transparent;
+
+    input {
+      padding: 15px;
+      background: #0000000f;
+      border-radius: 5px;
+    }
+  }
+
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    top: calc(100% - 1.6em) !important;
+    font-size: 14px;
+    font-weight: 600;
   }
 }
 
@@ -149,12 +186,12 @@ body {
   top: 30px !important;
 }
 
-.material-switch>input[type="checkbox"]:checked+label::before {
+.material-switch > input[type="checkbox"]:checked + label::before {
   background: #98ad3c !important;
   opacity: 0.5;
 }
 
-.material-switch>input[type="checkbox"]:checked+label::after {
+.material-switch > input[type="checkbox"]:checked + label::after {
   background: #98ad3c !important;
   left: 20px;
 }
@@ -241,7 +278,9 @@ body {
 }
 
 .mat-radio-button.mat-accent .mat-radio-inner-circle,
-.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
   background-color: #98ad4c !important;
@@ -391,8 +430,8 @@ body {
   margin-right: 0 !important;
   margin-left: 0 !important;
 
-  >.col,
-  >[class*="col-"] {
+  > .col,
+  > [class*="col-"] {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
@@ -526,12 +565,10 @@ body {
   }
 }
 
-
 .form-group.required label:after {
   content: "*";
   color: red;
 }
-
 
 .cdk-overlay-container {
   z-index: 1070 !important;
@@ -542,5 +579,11 @@ body {
   max-height: 600px !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
