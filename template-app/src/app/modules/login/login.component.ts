@@ -10,6 +10,10 @@ export class LoginComponent implements OnInit {
   //FormGroup
   loginform: FormGroup;
 
+  userList: Array<any> = [
+    { username: 'User1234', password: 'password' }
+  ];
+
   constructor() {
     this.loginform = new FormGroup({
       username: new FormControl('', [
@@ -30,7 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(res) {
+    // let isExist=this.userList.find((oid)=>oid==res.oid)
+    let isExist=this.userList.some(res);
     console.log(res);
+    console.log(this.userList);
+    console.log(isExist);
+
   }
 
   open() {

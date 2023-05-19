@@ -19,12 +19,14 @@
               formControlName="username"
               #username
               (input)="checkMobile($event.target.value)"
+              placeholder="Enter Username"
             />
             <mat-error>Invalid username.</mat-error>
           </mat-form-field>
           <mat-label>Password</mat-label>
           <mat-form-field floatLabel="never">
-            <input type="text" matInput formControlName="password" #password />
+            <input type="text" matInput formControlName="password" #password placeholder="Enter Password"/>
+            <mat-error>Invalid password.</mat-error>
           </mat-form-field>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
