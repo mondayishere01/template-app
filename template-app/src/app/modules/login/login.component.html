@@ -9,7 +9,7 @@
         alt="Logo_image"
         height="200"
       />
-      <form [formGroup]="loginform" (submit)="login(this.loginform.value)">
+      <form [formGroup]="loginForm" (submit)="login(this.loginForm.value)">
         <div class="mb-3 d-flex flex-column">
           <mat-label>Username</mat-label>
           <mat-form-field floatLabel="never">
@@ -25,11 +25,48 @@
           </mat-form-field>
           <mat-label>Password</mat-label>
           <mat-form-field floatLabel="never">
-            <input type="text" matInput formControlName="password" #password placeholder="Enter Password"/>
+            <input type="password" matInput formControlName="password" #password placeholder="Enter Password"/>
             <mat-error>Invalid password.</mat-error>
           </mat-form-field>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <form [formGroup]="signupForm" (submit)="login(this.signupForm.value)">
+        <div class="mb-3 d-flex flex-column">
+          <mat-label>Email</mat-label>
+          <mat-form-field floatLabel="never">
+            <input
+              type="email"
+              matInput
+              formControlName="email"
+              #email
+              placeholder="Enter Email"
+            />
+            <mat-error>Invalid email.</mat-error>
+          </mat-form-field>
+          <mat-label>Username</mat-label>
+          <mat-form-field floatLabel="never">
+            <input
+              type="text"
+              matInput
+              formControlName="username"
+              #username
+              (input)="checkMobile($event.target.value)"
+              placeholder="Enter Username"
+            />
+            <mat-error>Invalid username.</mat-error>
+          </mat-form-field>
+          <mat-label>Password</mat-label>
+          <mat-form-field floatLabel="never">
+            <div class="pass-div d-flex">
+              <input type="password" matInput formControlName="password" #password placeholder="Enter Password"/>
+              <mat-icon (click)="open">remove_red_eye</mat-icon>
+            </div>
+            <mat-error>Invalid password.</mat-error>
+          </mat-form-field>
+        </div>
+        <button type="submit" class="btn btn-primary">Signup</button>
       </form>
 
       <div class="note">

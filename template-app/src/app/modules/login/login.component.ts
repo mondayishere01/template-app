@@ -8,14 +8,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   //FormGroup
-  loginform: FormGroup;
+  loginForm: FormGroup;
+  signupForm: FormGroup;
 
   userList: Array<any> = [
     { username: 'User1234', password: 'password' }
   ];
+  password;
+  show = false;
 
   constructor() {
-    this.loginform = new FormGroup({
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [
+        Validators.pattern('^[A-Za-z][A-Za-z0-9_]{7,29}$'),
+        Validators.required,
+      ]),
+      password: new FormControl('', [
+        Validators.pattern('^[A-Za-z][A-Za-z0-9_]{7,29}$'),
+        Validators.required,
+      ]),
+    });
+    this.signupForm = new FormGroup({
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required,
+      ]),
       username: new FormControl('', [
         Validators.pattern('^[A-Za-z][A-Za-z0-9_]{7,29}$'),
         Validators.required,
@@ -40,6 +57,16 @@ export class LoginComponent implements OnInit {
     console.log(this.userList);
     console.log(isExist);
 
+  }
+
+  onClick() {
+    if (this.password === 'password') {
+      this.password = 'text';
+      this.show = true;
+    } else {
+      this.password = 'password';
+      this.show = false;
+    }
   }
 
   open() {
