@@ -10,12 +10,13 @@ export class LoginComponent implements OnInit {
   //FormGroup
   loginForm: FormGroup;
   signupForm: FormGroup;
+  public loginPassword: boolean;
+  public signinPassword: boolean;
+  public formDisplay: boolean;
 
   userList: Array<any> = [
     { username: 'User1234', password: 'password' }
   ];
-  password;
-  show = false;
 
   constructor() {
     this.loginForm = new FormGroup({
@@ -56,21 +57,5 @@ export class LoginComponent implements OnInit {
     console.log(res);
     console.log(this.userList);
     console.log(isExist);
-
-  }
-
-  onClick() {
-    if (this.password === 'password') {
-      this.password = 'text';
-      this.show = true;
-    } else {
-      this.password = 'password';
-      this.show = false;
-    }
-  }
-
-  open() {
-    console.log('not yet created');
-    alert('module not created yet');
   }
 }
