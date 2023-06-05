@@ -9,7 +9,11 @@
         alt="Logo_image"
         height="200"
       />
-      <form [formGroup]="loginForm" (submit)="login(this.loginForm.value)" *ngIf="!formDisplay">
+      <form
+        [formGroup]="loginForm"
+        (submit)="login(this.loginForm.value)"
+        *ngIf="!formDisplay"
+      >
         <div class="mb-3 d-flex flex-column">
           <mat-label>Username</mat-label>
           <mat-form-field floatLabel="never">
@@ -20,24 +24,45 @@
               #username
               (input)="checkMobile($event.target.value)"
               placeholder="Enter Username"
+              autocomplete="on"
             />
             <mat-error>Invalid username.</mat-error>
           </mat-form-field>
           <mat-label>Password</mat-label>
           <mat-form-field floatLabel="never">
             <div class="pass-div d-flex align-items-center">
-              <input [type]="loginPassword ? 'text' : 'password'" matInput formControlName="password" #password placeholder="Enter Password"/>
-              <mat-icon (click)="loginPassword = !loginPassword" class="ms-2" *ngIf="!loginPassword">remove_red_eye</mat-icon>
-              <mat-icon (click)="loginPassword = !loginPassword" class="ms-2" *ngIf="loginPassword">done</mat-icon>
+              <input
+                [type]="loginPassword ? 'text' : 'password'"
+                matInput
+                formControlName="password"
+                #password
+                placeholder="Enter Password"
+                autocomplete="on"
+              />
+              <mat-icon
+                (click)="loginPassword = !loginPassword"
+                class="ms-2"
+                *ngIf="!loginPassword"
+                >remove_red_eye</mat-icon
+              >
+              <mat-icon
+                (click)="loginPassword = !loginPassword"
+                class="ms-2"
+                *ngIf="loginPassword"
+                >done</mat-icon
+              >
             </div>
-            <!-- <input type="password" matInput formControlName="password" #password placeholder="Enter Password"/> -->
             <mat-error>Invalid password.</mat-error>
           </mat-form-field>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
 
-      <form [formGroup]="signupForm" (submit)="login(this.signupForm.value)" *ngIf="formDisplay">
+      <form
+        [formGroup]="signupForm"
+        (submit)="login(this.signupForm.value)"
+        *ngIf="formDisplay"
+      >
         <div class="mb-3 d-flex flex-column">
           <mat-label>Email</mat-label>
           <mat-form-field floatLabel="never">
@@ -47,6 +72,7 @@
               formControlName="email"
               #email
               placeholder="Enter Email"
+              autocomplete="on"
             />
             <mat-error>Invalid email.</mat-error>
           </mat-form-field>
@@ -59,15 +85,33 @@
               #username
               (input)="checkMobile($event.target.value)"
               placeholder="Enter Username"
+              autocomplete="on"
             />
             <mat-error>Invalid username.</mat-error>
           </mat-form-field>
           <mat-label>Password</mat-label>
           <mat-form-field floatLabel="never">
             <div class="pass-div d-flex align-items-center">
-              <input [type]="signinPassword ? 'text' : 'password'" matInput formControlName="password" #password placeholder="Enter Password"/>
-              <mat-icon (click)="signinPassword = !signinPassword" class="ms-2" *ngIf="!signinPassword">remove_red_eye</mat-icon>
-              <mat-icon (click)="signinPassword = !signinPassword" class="ms-2" *ngIf="signinPassword">done</mat-icon>
+              <input
+                [type]="signinPassword ? 'text' : 'password'"
+                matInput
+                formControlName="password"
+                #password
+                placeholder="Enter Password"
+                autocomplete="on"
+              />
+              <mat-icon
+                (click)="signinPassword = !signinPassword"
+                class="ms-2"
+                *ngIf="!signinPassword"
+                >remove_red_eye</mat-icon
+              >
+              <mat-icon
+                (click)="signinPassword = !signinPassword"
+                class="ms-2"
+                *ngIf="signinPassword"
+                >done</mat-icon
+              >
             </div>
             <mat-error>Invalid password.</mat-error>
           </mat-form-field>
@@ -76,8 +120,12 @@
       </form>
 
       <div class="note">
-        <a (click)="formDisplay = !formDisplay" *ngIf="!formDisplay">Create new account!</a>
-        <a (click)="formDisplay = !formDisplay" *ngIf="formDisplay">Already have a account!?</a>
+        <a (click)="formDisplay = !formDisplay" *ngIf="!formDisplay"
+          >Create new account!</a
+        >
+        <a (click)="formDisplay = !formDisplay" *ngIf="formDisplay"
+          >Already have a account!?</a
+        >
       </div>
     </div>
   </div>
