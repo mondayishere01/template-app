@@ -1,0 +1,257 @@
+// @import "../../../../assets/scss/global-variables.scss";
+
+*:focus {
+  outline: none;
+}
+.btnIcon {
+  margin-left: -10px;
+  margin-right: 5px;
+}
+.btnValue {
+  vertical-align: middle;
+}
+.kb-btn {
+  box-sizing: border-box;
+  &.primary {
+    &.defaultSize {
+      // font-family: "Poppins Medium" !important;
+      font-size: 16px;
+      min-height: 48px;
+      border-radius: 5px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px;
+      border: 1px solid var(--primary-color);
+      font-weight: 500;
+      cursor: pointer;
+      text-transform: capitalize;
+      line-height: 14px;
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey;
+      }
+    }
+    &.smallSize {
+      // font-family: Roboto !important;
+      font-size: 14px;
+      min-height: 30px;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0 15px;
+      font-weight: 500;
+      border: 1px solid var(--primary-color);
+      cursor: pointer;
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey;
+      }
+    }
+  }
+  &.secondary {
+    &.defaultSize {
+      font-family: "Poppins Medium" !important;
+      font-size: 14px;
+      min-height: 34px;
+      border-radius: 4px;
+      background-color: white;
+      color: var(--primary-color);
+      padding: 0 20px;
+      border: 1px solid var(--primary-color);
+      font-weight: 500;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey;
+      }
+    }
+    &.smallSize {
+      font-family: "Poppins Medium" !important;
+      font-size: 14px;
+      min-height: 30px;
+      border-radius: 4px;
+      background-color: white;
+      color: var(--primary-color);
+      padding: 0 15px;
+      border: 1px solid var(--primary-color);
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey;
+      }
+    }
+  }
+  &.tertiary {
+    &.defaultSize {
+      // font-family: "Poppins Medium" !important;
+
+      font-size: 14px;
+      min-height: 28px;
+      border-radius: 4px;
+      background-color: white;
+      color: darkgrey;
+      padding: 0 6px;
+      padding-right: 8px;
+      border: 1px solid #e0e0e0;
+      font-weight: 400;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background-color: #ededee;
+        border-color: #e0e0e0;
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey;
+      }
+      .btnValue {
+        margin-left: 5px;
+      }
+      .btnValue:empty {
+        margin-left: 0;
+      }
+      &.noLabel {
+        padding: 0 2px;
+      }
+    }
+  }
+  &.customColor {
+    &.defaultSize {
+      // font-family: "Poppins Medium" !important;
+
+      font-size: 14px;
+      min-height: 34px;
+      border-radius: 4px;
+      background-color: white;
+      color: darkgrey;
+      padding: 0 20px;
+      border: 1px solid currentColor;
+      font-weight: 500;
+      cursor: pointer;
+      text-transform: uppercase;
+      &:hover {
+        background-color: #ededee;
+        border-color: currentColor;
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: darkgrey !important;
+      }
+    }
+  }
+  // .align-center {
+  //   display: flex;
+  //   align-items: center;
+  // }
+}
+
+.rm-split-btn {
+  height: 34px;
+  display: inline-block;
+  .main-btn {
+    // font-family: "Poppins Medium" !important;
+
+    font-size: 14px;
+    height: 34px;
+    // border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 10px;
+    border: 1px solid var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .drop-down_trigger {
+    height: 34px;
+    width: 40px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0;
+    border: 1px solid var(--primary-color);
+    border-left-color: #1481b0;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 3px;
+  }
+  .drop-down_trigger,
+  .main-btn {
+    &:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #e0e0e0;
+      border-color: #e0e0e0;
+      color: darkgrey;
+    }
+  }
+}
+
+:host::ng-deep {
+  .rm-btn__loader {
+    background-color: white !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    mat-progress-spinner {
+      width: 16px !important;
+      height: 16px !important;
+      margin-right: 4px !important;
+
+      > svg {
+        width: 16px !important;
+        height: 16px !important;
+        > circle {
+          stroke-width: 15% !important;
+        }
+      }
+    }
+    .btn-spinner__text {
+      // color: darkgrey;
+      font-weight: 500; // Medium
+    }
+  }
+}
